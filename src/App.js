@@ -1,13 +1,26 @@
-import React from 'react'
-import Modal from './Modal'
-import Sidebar from './Sidebar'
-import Home from './Home'
+import React from "react";
+import Modal from "./Modal";
+import Sidebar from "./Sidebar";
+import Home from "./Home";
+
+import { useState, useContext } from "react";
+
+const ModalContext = React.createContext();
+
 function App() {
+  const [isModal, setIsModal] = useState(false);
+
+  const showModal = () => {
+    setIsModal(true);
+  };
+
   return (
     <>
-      <h2>modal-sidebar project setup</h2>
+      <Home />
+      <Modal />
+      <Sidebar />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
